@@ -39,10 +39,43 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
+
+  paper1.display();
+  box1.display();
+  box2.display();
+  box3.display();
+
   
   drawSprites();
  
 }
+function keyPressed (){
+  if (keycode === UP_ARROW)	{
+    Matter.body.applyForce(this.body,this.body.position,{x:85,y:-85});
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
