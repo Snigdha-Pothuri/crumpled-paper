@@ -28,10 +28,10 @@ function setup() {
 
 	Engine.run(engine);
 
-	paper1=new paper (50,100,width,height); 
+	paper1=new paper (50,100,30); 
 	box1= new dustbin(370,300,20,200);
 	box2=new dustbin(200,300,20,200);
-	box3=new dustbin(270,300,260,20);
+	box3=new dustbin(290,390,170,20);
   
 }
 
@@ -50,9 +50,9 @@ function draw() {
  
 }
 function keyPressed (){
-  if (keycode === UP_ARROW)	{
-    Matter.body.applyForce(this.body,this.body.position,{x:85,y:-85});
-  }
+  if (keyCode === 32)	{
+    Matter.Body.applyForce(this.body,this.body.position,{x:85,y:-85});
+  } 
 }
 
 
