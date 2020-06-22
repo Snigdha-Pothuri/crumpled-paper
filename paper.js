@@ -5,7 +5,7 @@ class paper {
             'friction':1.0,
             'density':1.0
         }
-        this.body =Bodies.circle(x,y,radius,options);
+        this.body =Bodies.circle(this.x,this.y,this.radius,options);
         this.x = x;
         this.y = y;
         this.radius=radius;

@@ -8,7 +8,7 @@ const Body = Matter.Body;
 function preload()
 {
 	
-}
+}                                          
 
 function setup() {
 	createCanvas(400, 400);
@@ -51,7 +51,7 @@ function draw() {
 }
 function keyPressed (){
   if (keyCode === 32)	{
-    Matter.Body.applyForce(this.body,this.body.position,{x:85,y:-85});
+    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:85,y:-85});
   } 
 }
 
