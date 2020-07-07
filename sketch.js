@@ -1,49 +1,82 @@
+//var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
+//var packageBody,ground 
+
 const Engine = Matter.Engine;
-const World= Matter.World;
+const World = Matter.World;
 const Bodies = Matter.Bodies;
-const Constraint = Matter.Constraint;
+const Body = Matter.Body;
 
-
- var engine, world;
-var gamestate = "ONSLING" 
+function preload()
+{
+ 	
+}                                          
 
 function setup() {
-  createCanvas(800,400); 
-  
-  engine = Engine.create();
-  world = engine.world;
+	createCanvas(400, 400);
+
+
+	engine = Engine.create();
+	world = engine.world;
+
+	//packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:1.5, isStatic:false});
+	//World.add(world, packageBody);
+	
+	paper1=new paper (50,100,30); 
+	box1= new dustbin(370,300,20,200);
+	box2=new dustbin(200,300,20,200);
+	box3=new dustbin(290,390,170,20); 
+	//Create a Ground
+	
+
+
+	Engine.run(engine);
+
+    ground = new Ground (200,390,400,30);
+
 }
+
 
 function draw() {
-  background(255,255,255);  
-  
-  box1=new box (330,235,30,40)
-  box2= new box(360,235,30,40)
-  box3=new box(390,235,30,40)
-  box4=new box(420,235,30,40)
-  box5=new box(450,235,30,40)
-  box6=new box(360,195,30,40)
-  box7=new box(390,195,30,40)
-  box8=new box(420,195,30,40)
-  box9=new box(390,155,30,40)
+  rectMode(CENTER);
+  background(0);
 
- polygon= Bodies.circle(50,200,20); 
- World.add(world,polygon);
+  paper1.display();
+  box1.display();
+  box2.display();
+  box3.display();
 
- sling = new SlingShot(this.polygon,{x:100,y:200}) 
-
+  ground.display();
 
   drawSprites();
-} 
-function mouseDragged(){
-  if(gamestate!== "launched"){
-  Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
-  }
+ 
+}
+function keyPressed (){
+  if (keyCode === 32)	{
+    Matter.Body.applyForce(paper1.body,paper1.body.position,{x:85,y:-85});
+  } 
 }
 
 
-function mouseReleased(){
 
-  sling.fly();
-  gamestate="launched"  
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
